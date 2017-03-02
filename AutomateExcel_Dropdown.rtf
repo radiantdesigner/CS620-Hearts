@@ -1,0 +1,36 @@
+{\rtf1\ansi\ansicpg1252\cocoartf1504\cocoasubrtf760
+{\fonttbl\f0\fswiss\fcharset0 Helvetica;}
+{\colortbl;\red255\green255\blue255;}
+{\*\expandedcolortbl;;}
+\margl1440\margr1440\vieww10800\viewh8400\viewkind0
+\pard\tx720\tx1440\tx2160\tx2880\tx3600\tx4320\tx5040\tx5760\tx6480\tx7200\tx7920\tx8640\pardirnatural\partightenfactor0
+
+\f0\fs24 \cf0 sub requestFileAccess()\
+Dim fileAccessGranted As Boolean\
+Dim filePermissionCandidates\
+filePermissionCandidates = Array(\'93/Users/\'93user\'94/\'93folder\'94/\'93filename\'94.xlsx\'94)\
+fileAccessGranted = GrantAccessToMultipleFiles(filePermissionCandidates)\
+End Sub\
+\
+Sub AutomateExcel()\
+Dim objExcel As Object\
+Dim objWorkbook As Object\
+Dim strPath As String\
+Dim ffield As Object\
+\
+strPath = \'93/Users/\'93user\'94/\'93folder\'94/Sample Data\'94.xlsx\'94\
+Set objExcel = CreateObject(\'93Excel.Application\'94)\
+objExcel.Visible = True\
+Set objWorkbook = objExcel.Workbooks.Open(strPath)\
+Set ffield = ActiveDocument.FormFields(\'93Dropdown1\'94).DropDown\
+Call ReadData(objWorkbook, field)\
+End Sub\
+\
+Private Sub ReadData(ByRef objWorkbook As Object, field As Object)\
+Dim strTemp As String\
+For i = 1 to 58\
+field.ListEntries.Add Name:=objWorkbook.sheets(1).Cells(i + 1, 1) & \'93 - \'93 &\
+objWorkbook.sheets(1).Cells(i + 1, 2)\
+Selection.TypeParagraph\
+Next i\
+End Sub}
