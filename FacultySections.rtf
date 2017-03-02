@@ -1,0 +1,17 @@
+{\rtf1\ansi\ansicpg1252\cocoartf1504\cocoasubrtf760
+{\fonttbl\f0\fswiss\fcharset0 Helvetica;}
+{\colortbl;\red255\green255\blue255;}
+{\*\expandedcolortbl;;}
+\margl1440\margr1440\vieww10800\viewh8400\viewkind0
+\deftab720
+\pard\pardeftab720\ri0\partightenfactor0
+
+\f0\fs24 \cf0 As a class scheduler, I want to make sure that faculty have between 0 and 4 sections each, so that no one faculty end up with an unfair amount of sections.\
+\
+// check faculty\'92s section \
+\
+Sub checkSection()\uc0\u8232 \'a0\'a0\'a0Dim num As Integer\u8232 \'a0\'a0\'a0Boolean flag\u8232 \'a0\'a0\'a0Dim i As Long\u8232 \'a0\'a0\'a0\'a0\'a0\'a0\'a0For i = 1 To Rows.Count\u8232 \'a0\'a0\'a0\'a0\'a0\'a0\'a0Next i\u8232 \'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0If Cells(i, 1).Value < 4 And \'a0Cells(i, 1).Value > 0 Then\u8232 \'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0flag = true\
+\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0else\
+\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0flag = false \
+\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0End If\
+End Sub}
